@@ -5,10 +5,28 @@
 	<script src="https://unpkg.com/blockcity-js-sdk/dist/blockcity-js-sdk.min.js"></script>
 </head>
 <body>
-	<h1>test</h1>
-	<button class="btn" onclick="callContract()">caller</button>
+	<h1>test auth</h1>
+	<button onclick="callAuth()">call auth</button>
+
+	<h1>test contract</h1>
+	<button class="btn" onclick="callContract()">call contract</button>
 
 	<script type="text/javascript">
+		function callAuth() {
+			BlockCity.callAuth({
+			    authItem: 'account',
+			    success: function (res) {
+			        alert('成功回调' + res);
+			    },
+			    fail: function (res) {
+			        alert('分享失败' + res);
+			    },
+			    cancel: function (res) {
+			        alert('用户取消' + res);
+			    }
+			});
+		}
+
 		function callContract() {
 			alert('开始调用合约函数');
 			BlockCity.callContract({
@@ -35,7 +53,7 @@
 	</script>
 
 	<style type="text/css">
-		.btn {
+		button {
 			width: 90px;
 			height: 40px;
 		}
