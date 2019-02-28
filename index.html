@@ -28,15 +28,16 @@
 		}
 
 		function callContract() {
-			alert('开始调用合约函数');
 			BlockCity.callContract({
-			    contractName: 'bank',       // 智能合约账户名
-			    amount: {                   // 发送资产对象 (Optional，需发送资产，则传入资产对象)
-			        asset_id: '1.3.1',      // 资产ID
-			        amount: 100000          // 资产数量（需保留精度，如发送1GXC,则传入100000）
-			    },
-			    methodName: 'deposit',      // 智能合约函数名
-			    methodParams: {},           // 智能合约函数传参
+			    contractName: 'hi-hello',       // 智能合约账户名
+			    // amount: {                   // 发送资产对象 (Optional，需发送资产，则传入资产对象)
+			    //     asset_id: '1.3.1',      // 资产ID
+			    //     amount: 100000          // 资产数量（需保留精度，如发送1GXC,则传入100000）
+			    // },
+			    methodName: 'hi',      // 智能合约函数名
+			    methodParams: {
+			    	user: 'hello',
+			    },           // 智能合约函数传参
 			    success: function (result) {
 			        alert('成功：' + result);
 			    },
