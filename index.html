@@ -2,7 +2,12 @@
 <html>
 <head>
 	<title>caller test</title>
-	<script src="https://unpkg.com/blockcity-js-sdk/dist/blockcity-js-sdk.min.js"></script>
+	<style type="text/css">
+		button {
+			width: 90px;
+			height: 40px;
+		}
+	</style>
 </head>
 <body>
 	<h1>test auth</h1>
@@ -11,48 +16,8 @@
 	<h1>test contract</h1>
 	<button class="btn" onclick="callContract()">call contract</button>
 
-	<script type="text/javascript">
-		function callAuth() {
-			BlockCity.callAuth({
-			    authItem: 'account',
-			    success: function (res) {
-			        alert('成功回调' + res);
-			    },
-			    fail: function (res) {
-			        alert('分享失败' + res);
-			    },
-			    cancel: function (res) {
-			        alert('用户取消' + res);
-			    }
-			});
-		}
-
-		function callContract() {
-			BlockCity.callContract({
-			    contractName: 'hi-hello',       // 智能合约账户名
-			    amount: 0,
-			    methodName: 'hi',      // 智能合约函数名
-			    methodParams: {
-			    	user: 'hello',
-			    },           // 智能合约函数传参
-			    success: function (result) {
-			        alert('成功：' + result);
-			    },
-			    fail: function (result) {
-			        alert('失败：' + result);
-			    },
-			    cancel: function (result) {
-			        alert('取消：' + result);
-			    }
-			});
-		}
-	</script>
-
-	<style type="text/css">
-		button {
-			width: 90px;
-			height: 40px;
-		}
-	</style>
+	<script src="blockcity-js-sdk.min.js"></script>
+	<script src="BlockCityGenesis.js"></script>
+	<script src="main.js"></script>
 </body>
 </html>
