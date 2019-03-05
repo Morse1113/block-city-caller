@@ -19,36 +19,5 @@
 	<script src="blockcity-js-sdk.min.js"></script>
 	<script src="BlockCityGenesis.js"></script>
 	<script src="main.js"></script>
-
-	<script>
-
-		function callContract() {
-			BlockCity.callContract({
-				contractName: 'genesis-4',
-				amount: 0,
-				methodName: 'insert',
-				methodParams: {
-					name: "Jack",
-					hp: 100,
-					mp: 100,
-					str: 100,
-					inteli: 100,
-					san: 100,
-					luck: 100,
-					charm: 100,
-					mt: 2
-				},
-				success: function(result) {
-					alert("success: " + result);
-				},
-				fail: function(result) {
-					alert("fail: " + result);
-				},
-				cancel: function(result) {
-					alert("cancel: " + result);
-				} 
-			});
-		}
-	</script>
 </body>
 </html>

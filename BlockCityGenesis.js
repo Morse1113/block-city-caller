@@ -1,5 +1,8 @@
 "use strict";
 
+const TEST_CONTRACT = "genesis-4";
+const MAIN_CONTRACT = "";
+
 class BlockCityGenesis {
 
     static callAuth() {
@@ -17,40 +20,12 @@ class BlockCityGenesis {
 		});
     }
 
-    static init() {
-    	BlockCity.callContract({
-			contractName: 'genesis-4',
-			amount: 0,
-			methodName: 'init',
-			methodParams: { },
-			success: function (result) {
-		        alert('成功：' + result);
-		    },
-		    fail: function (result) {
-		        alert('失败：' + result);
-		    },
-		    cancel: function (result) {
-		        alert('取消：' + result);
-		    }
-		});	
-    }
-
     static insertCharacter(character) {
         BlockCity.callContract({
-			contractName: 'genesis-4',
+			contractName: TEST_CONTRACT,
 			amount: 0,
-			methodName: 'insertcharac',
-			methodParams: {
-				name: "morse",
-				hp: 100,
-				mp: 100,
-				str: 100,
-				inteli: 100,
-				san: 100,
-				luck: 100,
-				charm: 100,
-				mt: 2
-			},
+			methodName: 'insert',
+			methodParams: character,
 			success: function (result) {
 		        alert('成功：' + result);
 		    },
