@@ -23,14 +23,14 @@ class BlockCityGenesis {
 			amount: 0,
 			methodName: 'insertcharac',
 			methodParams: {
-				charm: 100
-				hp: 100
-				inteli: 100
-				luck: 40
-				mp: 100
-				mt: 0
-				name: "morse"
-				san: 100
+				charm: 100,
+				hp: 100,
+				inteli: 100,
+				luck: 40,
+				mp: 100,
+				mt: 0,
+				name: "morse",
+				san: 100,
 				str: 100
 			},
 			success: function (result) {
