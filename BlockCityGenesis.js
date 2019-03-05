@@ -35,6 +35,46 @@ class BlockCityGenesis {
 		});	
     }
 
+    static affectNeg(id) {
+    	BlockCity.callContract({
+    		contractName: 'morse-genesis-3',
+			amount: 0,
+			methodName: 'affectneg',
+			methodParams: {
+				id: id
+			},
+			success: function (result) {
+		        alert('成功：' + result);
+		    },
+		    fail: function (result) {
+		        alert('失败：' + result);
+		    },
+		    cancel: function (result) {
+		        alert('取消：' + result);
+		    }
+    	});
+    }
+
+    static testHello() {
+    	BlockCity.callContract({
+    		contractName: 'morse-hello',
+			amount: 0,
+			methodName: 'hi',
+			methodParams: {
+				user: 'liuwen'
+			},
+			success: function (result) {
+		        alert('成功：' + result);
+		    },
+		    fail: function (result) {
+		        alert('失败：' + result);
+		    },
+		    cancel: function (result) {
+		        alert('取消：' + result);
+		    }
+    	});
+    }
+
     static playerToCharacter(player) {
     	let character = {
 				name: player.name,
