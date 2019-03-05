@@ -17,23 +17,12 @@ class BlockCityGenesis {
 		});
     }
 
-    static insertCharacter(player) {
-    	console.log(player);
+    static insertCharacter(character) {
         BlockCity.callContract({
 			contractName: 'morse-genesis-3',
 			amount: 0,
 			methodName: 'insertcharac',
-			methodParams: {
-				name: player.name,
-				hp: player.fatigue,
-				mp: player.spirit,
-				str: player.power,
-				inteli: player.intelligence,
-				san: player.gold,
-				luck: player.goodness,
-				charm: player.agility,
-				mt: 0
-			},
+			methodParams: character,
 			success: function (result) {
 		        alert('成功：' + result);
 		    },
@@ -44,5 +33,20 @@ class BlockCityGenesis {
 		        alert('取消：' + result);
 		    }
 		});	
+    }
+
+    static playerToCharacter(player) {
+    	let character = {
+				name: player.name,
+				hp: player.fatigue,
+				mp: player.spirit,
+				str: player.power,
+				inteli: player.intelligence,
+				san: player.gold,
+				luck: player.goodness,
+				charm: player.agility,
+				mt: 0
+			}
+		return character;
     }
 }
