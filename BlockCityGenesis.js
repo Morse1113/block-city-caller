@@ -24,7 +24,7 @@ class BlockCityGenesis {
         BlockCity.callContract({
 			contractName: TEST_CONTRACT,
 			amount: 0,
-			methodName: 'insertcharac',
+			methodName: 'insert',
 			methodParams: character,
 			success: function (result) {
 		        alert('成功：' + result);
